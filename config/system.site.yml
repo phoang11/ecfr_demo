@@ -1,0 +1,15 @@
+_core:
+  default_config_hash: ijfbzDTN4CbE7Sr-6ubWzy_t1vH4OtU1doNCLssVz-4
+langcode: en
+uuid: 7a61973e-ea10-4ce6-b540-bdaf59c822be
+name: 'eCFR Analytics Demo'
+mail: admin@example.com
+slogan: ''
+page:
+  403: ''
+  404: ''
+  front: /ecfr/agencies
+admin_compact_mode: false
+weight_select_max: 100
+default_langcode: en
+mail_notification: null

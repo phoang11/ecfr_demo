@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+set -ex
+
+## Description: Uninstall and install ecfr_regulations module
+## Usage: ecfr
+## Example: "ddev ecfr"
+
+ddev drush ecfr:purge -y
+ddev drush pmu ecfr_regulations -y
+ddev drush en ecfr_regulations -y
+ddev drush ecfr:get-title-xml
+ddev drush ecfr:import

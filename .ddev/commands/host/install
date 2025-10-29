@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+set -ex
+## Description: Install and launch the project
+## Usage: install
+## Example: "ddev install"
+
+ddev start
+ddev composer install
+ddev snapshot restore intialdb
+ddev drush cim -y
+ddev ecfr
+ddev drush cr
+ddev launch

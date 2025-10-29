@@ -1,0 +1,6 @@
+_core:
+  default_config_hash: dWR-HO8onUd2-hiiHEubBxTgf_sr1n6Cjve3RHuuIa4
+cache_lifetime: 86400
+api_base: 'https://www.ecfr.gov'
+xml_storage_directory: 'public://ecfr_titles'
+xml_download_timeout: 45

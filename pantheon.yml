@@ -1,0 +1,28 @@
+# Put overrides to your pantheon.upstream.yml file here.
+# For more information, see: https://pantheon.io/docs/pantheon-yml/
+api_version: 1
+
+web_docroot: true
+
+workflows:
+  sync_code:
+    before:
+      - type: webphp
+        description: Clear dblog
+        script: private/scripts/clear-dblog.php
+    after:
+      - type: webphp
+        description: Config import
+        script: private/scripts/1-config-import.php
+      # - type: webphp
+      #   description: Install module
+      #   script: private/scripts/2-install-module.php
+      - type: webphp
+        description: Import regulations
+        script: private/scripts/4-import-regulations.php
+      - type: webphp
+        description: Import regulations
+        script: private/scripts/4-import-regulations.php
+      # - type: webphp
+      #   description: Clear Caches
+      #   script: private/scripts/clear-caches.php

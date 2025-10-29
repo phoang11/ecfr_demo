@@ -1,0 +1,13 @@
+ecfr_regulations.settings:
+  type: config_object
+  label: 'eCFR Regulations settings'
+  mapping:
+    cache_lifetime:
+      type: integer
+      label: 'Cache lifetime in seconds'
+    api_base:
+      type: string
+      label: 'Override API base URL'
+    xml_storage_directory:
+      type: string
+      label: 'Directory (stream wrapper or relative path) to store downloaded Title XML files'

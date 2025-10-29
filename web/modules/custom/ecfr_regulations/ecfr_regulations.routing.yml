@@ -1,0 +1,69 @@
+ecfr_regulations.settings:
+  path: '/admin/config/services/ecfr-regulations'
+  defaults:
+    _form: '\Drupal\ecfr_regulations\Form\EcfrSettingsForm'
+    _title: 'eCFR Regulations settings'
+  requirements:
+    _permission: 'administer site configuration'
+
+ecfr_regulations.analytics_agencies:
+  path: '/ecfr/agencies'
+  defaults:
+    _controller: '\Drupal\ecfr_regulations\Controller\EcfrAnalyticsController::listAgencies'
+    _title: 'eCFR Agencies Analytics'
+  requirements:
+    _permission: 'access content'
+
+ecfr_regulations.analytics_agency:
+  path: '/ecfr/agencies/{slug}'
+  defaults:
+    _controller: '\Drupal\ecfr_regulations\Controller\EcfrAnalyticsController::agencyDetail'
+    _title: "Agency's Regulations"
+  requirements:
+    _permission: 'access content'
+
+ecfr_regulations.analytics_regulation_text:
+  path: '/ecfr/agencies/{agencySlug}/regulations/{regulationId}/text'
+  defaults:
+    _controller: '\Drupal\ecfr_regulations\Controller\EcfrAnalyticsController::viewRegulationRaw'
+    _title: 'Regulation Text'
+  requirements:
+    _permission: 'access content'
+
+ecfr_regulations.analytics_titles:
+  path: '/ecfr/titles'
+  defaults:
+    _controller: '\Drupal\ecfr_regulations\Controller\EcfrAnalyticsController::listTitles'
+    _title: 'eCFR Titles'
+  requirements:
+    _permission: 'access content'
+
+ecfr_regulations.api_titles:
+  path: '/api/ecfr/titles'
+  defaults:
+    _controller: '\Drupal\ecfr_regulations\Controller\EcfrController::listTitles'
+    _title: 'eCFR Titles API'
+  requirements:
+    _permission: 'access content'
+  options:
+    _format: 'json'
+    
+ecfr_regulations.agencies:
+  path: '/api/ecfr/agencies'
+  defaults:
+    _controller: '\Drupal\ecfr_regulations\Controller\EcfrController::listAgencies'
+    _title: 'eCFR Agencies'
+  requirements:
+    _permission: 'access content'
+  options:
+    _format: 'json'
+
+ecfr_regulations.agency:
+  path: '/api/ecfr/agencies/{slug}'
+  defaults:
+    _controller: '\Drupal\ecfr_regulations\Controller\EcfrController::getAgency'
+    _title: 'eCFR Agency'
+  requirements:
+    _permission: 'access content'
+  options:
+    _format: 'json'

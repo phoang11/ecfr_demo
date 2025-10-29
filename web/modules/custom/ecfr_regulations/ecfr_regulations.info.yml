@@ -1,0 +1,8 @@
+name: eCFR Regulations
+type: module
+description: Analytics for eCFR agencies regulations and expose some APIs for stored data.
+package: Custom
+core_version_requirement: ^10 || ^11
+dependencies:
+  - drupal:system
+configure: ecfr_regulations.settings

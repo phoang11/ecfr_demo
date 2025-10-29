@@ -1,0 +1,15 @@
+services:
+  ecfr_regulations.drush_commands:
+    class: Drupal\ecfr_regulations\Drush\Commands\EcfrRegulationsCommands
+    arguments:
+      - '@ecfr_regulations.agency_service'
+      - '@ecfr_regulations.regulation_service'
+      - '@ecfr_regulations.client'
+      - '@file_system'
+    tags:
+      - { name: drush.command }
+  ecfr_regulations.download_titles_commands:
+    class: Drupal\ecfr_regulations\Drush\Commands\EcfrDownloadTitlesCommands
+    arguments: ['@ecfr_regulations.client']
+    tags:
+      - { name: drush.command }

@@ -1,0 +1,4 @@
+access ecfr regulations analytics:
+  title: 'Access eCFR regulations analytics UI'
+  description: 'Allow users to view agency metrics list and history pages.'
+  restrict: false

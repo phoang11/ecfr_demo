@@ -1,0 +1,4 @@
+cache_lifetime: 86400
+api_base: 'https://www.ecfr.gov'
+xml_download_timeout: 45
+xml_storage_directory: 'public://ecfr_titles'

@@ -1,0 +1,8 @@
+uuid: 90e07335-4850-4699-b107-b7e9775c6f8a
+langcode: en
+status: true
+dependencies: {  }
+id: ecfr_date_format
+label: ECFR_date_format
+locked: false
+pattern: Y-m-d

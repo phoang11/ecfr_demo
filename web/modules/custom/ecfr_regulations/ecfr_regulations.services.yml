@@ -1,0 +1,33 @@
+services:
+  ecfr_regulations.client:
+    class: Drupal\ecfr_regulations\EcfrAPIClient
+    arguments:
+      - '@http_client'
+      - '@config.factory'
+      - '@logger.channel.ecfr_regulations'
+      - '@file_system'
+      - '@file.repository'
+  ecfr_regulations.agency_service:
+    class: Drupal\ecfr_regulations\EcfrAgency
+    arguments:
+      - '@ecfr_regulations.client'
+      - '@cache.default'
+      - '@config.factory'
+      - '@entity_type.manager'
+      - '@logger.channel.ecfr_regulations'
+      - '@date.formatter'
+      - '@string_translation'
+  ecfr_regulations.regulation_service:
+    class: Drupal\ecfr_regulations\EcfrRegulation
+    arguments:
+      - '@cache.default'
+      - '@config.factory'
+      - '@entity_type.manager'
+      - '@file_system'
+      - '@logger.channel.ecfr_regulations'
+      - '@date.formatter'
+      - '@string_translation'
+      - '@ecfr_regulations.agency_service'
+  logger.channel.ecfr_regulations:
+    parent: logger.channel_base
+    arguments: ['ecfr_regulations']

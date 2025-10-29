@@ -1,0 +1,25 @@
+<?php
+
+/**
+ * @file
+ * Install, update, and uninstall hooks for eCFR Regulations module.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function ecfr_regulations_install(): void {
+  // Set default configuration values.
+  \Drupal::configFactory()->getEditable('ecfr_regulations.settings')
+    ->set('cache_lifetime', 86400)
+    ->set('api_base', 'https://www.ecfr.gov')
+    ->save();
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function ecfr_regulations_uninstall(): void {
+  // Clear all cached data for this module.
+  \Drupal::service('cache_tags.invalidator')->invalidateTags(['ecfr_regulations']);
+}

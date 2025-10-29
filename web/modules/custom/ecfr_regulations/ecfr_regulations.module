@@ -1,0 +1,17 @@
+<?php
+
+/**
+ * @file
+ * Module file for eCFR Regulations.
+ */
+
+/**
+ * Implements hook_cron().
+ */
+function ecfr_regulations_cron(): void {
+  /** @var \Drupal\ecfr_regulations\EcfrAgency $agencyService */
+  $agencyService = \Drupal::service('ecfr_regulations.agency_service');
+  // Refresh agencies cache (which persists entities) but avoid a rebuild when
+  // the cache remains valid.
+  $agencyService->getAgencies();
+}

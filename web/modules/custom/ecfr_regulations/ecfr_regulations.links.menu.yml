@@ -1,0 +1,18 @@
+ecfr_regulations.settings:
+  title: 'eCFR Regulations settings'
+  description: 'Configure cache lifetime and API base.'
+  route_name: ecfr_regulations.settings
+  parent: system.admin_config_services
+  weight: 100
+ecfr_regulations.analytics_agencies:
+  title: 'eCFR Agencies analytics'
+  description: 'View agency metrics and history.'
+  route_name: ecfr_regulations.analytics_agencies
+  parent: system.main
+  weight: 0
+ecfr_regulations.analytics_titles:
+  title: 'eCFR Titles'
+  description: 'View all eCFR titles and their latest change dates.'
+  route_name: ecfr_regulations.analytics_titles
+  parent: system.main
+  weight: 1
